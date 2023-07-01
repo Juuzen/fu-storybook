@@ -1,0 +1,7 @@
+{
+  "name": "fu-storybook",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
