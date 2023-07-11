@@ -1,0 +1,23 @@
+.homeBanner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 64px;
+  }
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-height: 200px;
+
+  ion-icon {
+    font-size: 48px;
+  }
+}
