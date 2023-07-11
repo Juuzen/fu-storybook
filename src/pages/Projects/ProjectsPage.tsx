@@ -1,8 +1,10 @@
-import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/react'
+import { IonBreadcrumb, IonBreadcrumbs, IonCol, IonContent, IonGrid, IonRow } from '@ionic/react'
+import ProjectCalculator from './ProjectCalculator/Projects'
+import RitualCalculator from './RitualCalculator/Rituals'
 
 const ProjectsPage = () => {
   return (
-    <div>
+    <IonContent>
       <IonBreadcrumbs>
         <IonBreadcrumb routerLink='home'>Homepage</IonBreadcrumb>
         <IonBreadcrumb routerLink='projects' active>
@@ -10,7 +12,19 @@ const ProjectsPage = () => {
         </IonBreadcrumb>
       </IonBreadcrumbs>
       <h1>Progetti e Rituali</h1>
-    </div>
+
+      <IonGrid>
+        <IonRow>
+          <IonCol size='6'>
+            <ProjectCalculator />
+          </IonCol>
+
+          <IonCol size='6'>
+            <RitualCalculator />
+          </IonCol>
+        </IonRow>
+      </IonGrid>
+    </IonContent>
   )
 }
 
