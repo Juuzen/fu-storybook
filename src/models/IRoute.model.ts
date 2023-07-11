@@ -1,6 +1,6 @@
 export default interface IRoute {
-    url: string;
-    iosIcon: string;
-    mdIcon: string;
-    title: string;
-  }
+  url: string
+  icon: string
+  title: string
+  component: () => JSX.Element
+}
