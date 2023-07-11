@@ -20,7 +20,6 @@ import '@ionic/react/css/display.css'
 /* Theme variables */
 import './theme/variables.css'
 import Layout from './layout/Layout'
-import { Route } from 'react-router-dom'
 
 setupIonicReact()
 

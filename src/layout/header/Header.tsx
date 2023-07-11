@@ -7,22 +7,23 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react'
+import { heart } from 'ionicons/icons'
 
 const Header = () => {
   return (
     <IonHeader>
-      <IonToolbar>
+      <IonToolbar color='primary'>
         <IonButtons slot='start'>
           <IonMenuButton />
         </IonButtons>
 
-        <IonTitle>HEADER</IonTitle>
+        <IonTitle>Storybook</IonTitle>
 
-        {/*<IonButtons slot='end'>
+        <IonButtons slot='end'>
           <IonButton>
-            <IonIcon ios='heart-outline' md='heart-sharp' />
+            <IonIcon icon={heart} />
           </IonButton>
-        </IonButtons> */}
+        </IonButtons>
       </IonToolbar>
     </IonHeader>
   )
