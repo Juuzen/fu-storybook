@@ -6,10 +6,10 @@ const ProjectsPage = () => {
       <IonBreadcrumbs>
         <IonBreadcrumb routerLink='home'>Homepage</IonBreadcrumb>
         <IonBreadcrumb routerLink='projects' active>
-          Progetti
+          Progetti e Rituali
         </IonBreadcrumb>
       </IonBreadcrumbs>
-      <h1>Projects</h1>
+      <h1>Progetti e Rituali</h1>
     </div>
   )
 }
