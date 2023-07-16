@@ -1,12 +1,13 @@
 import IRoute from '../models/IRoute.model'
 import { construct, diamond, dice, home, informationCircle, receipt, skull } from 'ionicons/icons'
-import HomePage from '../pages/Home/HomePage'
-import ProjectsPage from '../pages/Projects/ProjectsPage'
-import AboutPage from '../pages/About/AboutPage'
-import BattleTrackerPage from '../pages/BattleTracker/BattleTrackerPage'
-import RareItemsPage from '../pages/RareItems/RareItemsPage'
-import NPCPage from '../pages/NPC/NPCPage'
-import DiceUtilsPage from '../pages/DiceUtils/DiceUtilsPage'
+import HomePage from '../pages/HomePage/HomePage'
+import ProjectsPage from '../pages/ProjectsPage/ProjectsPage'
+import AboutPage from '../pages/AboutPage/AboutPage'
+import BattleTrackerPage from '../pages/BattleTrackerPage/BattleTrackerPage'
+import RareItemsPage from '../pages/RareItemsPage/RareItemsPage'
+import NPCPage from '../pages/NPCPage/NPCPage'
+import DiceUtilsPage from '../pages/DiceUtilsPage/DiceUtilsPage'
+import TestPage from '../pages/TestPage/TestPage'
 
 export const homeRoute: IRoute = {
   title: 'Home', //TODO: aggiungere localizzazione
@@ -55,6 +56,13 @@ export const sidebarRoutes: IRoute[] = [
     icon: dice,
     component: DiceUtilsPage,
     disabled: true,
+  },
+  {
+    title: 'Test', //TODO: aggiungere localizzazione
+    subtitle: 'Pagina di test per varie cose.', //TODO: aggiungere localizzazione
+    url: '/tests',
+    icon: construct,
+    component: TestPage,
   },
 ]
 

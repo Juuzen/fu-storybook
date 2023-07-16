@@ -1,8 +1,7 @@
 import { IonBreadcrumb, IonBreadcrumbs, IonCol, IonContent, IonGrid, IonRow } from '@ionic/react'
-import ProjectCalculator from './ProjectCalculator/Projects'
-import RitualCalculator from './RitualCalculator/Rituals'
+import Clock from './Clock/Clock'
 
-const ProjectsPage = () => {
+const TestPage = () => {
   return (
     <IonContent>
       <IonBreadcrumbs>
@@ -16,11 +15,7 @@ const ProjectsPage = () => {
       <IonGrid>
         <IonRow>
           <IonCol size='6'>
-            <ProjectCalculator />
-          </IonCol>
-
-          <IonCol size='6'>
-            <RitualCalculator />
+            <Clock />
           </IonCol>
         </IonRow>
       </IonGrid>
@@ -28,4 +23,4 @@ const ProjectsPage = () => {
   )
 }
 
-export default ProjectsPage
+export default TestPage
