@@ -1,5 +1,14 @@
 import IRoute from '../models/IRoute.model'
-import { construct, diamond, dice, home, informationCircle, receipt, skull } from 'ionicons/icons'
+import {
+  construct,
+  diamond,
+  dice,
+  flask,
+  home,
+  informationCircle,
+  receipt,
+  skull,
+} from 'ionicons/icons'
 import HomePage from '../pages/HomePage/HomePage'
 import ProjectsPage from '../pages/ProjectsPage/ProjectsPage'
 import AboutPage from '../pages/AboutPage/AboutPage'
@@ -7,7 +16,7 @@ import BattleTrackerPage from '../pages/BattleTrackerPage/BattleTrackerPage'
 import RareItemsPage from '../pages/RareItemsPage/RareItemsPage'
 import NPCPage from '../pages/NPCPage/NPCPage'
 import DiceUtilsPage from '../pages/DiceUtilsPage/DiceUtilsPage'
-import TestPage from '../pages/TestPage/TestPage'
+import LabPage from '../pages/LabPage/LabPage'
 
 export const homeRoute: IRoute = {
   title: 'Home', //TODO: aggiungere localizzazione
@@ -58,11 +67,11 @@ export const sidebarRoutes: IRoute[] = [
     disabled: true,
   },
   {
-    title: 'Test', //TODO: aggiungere localizzazione
-    subtitle: 'Pagina di test per varie cose.', //TODO: aggiungere localizzazione
-    url: '/tests',
-    icon: construct,
-    component: TestPage,
+    title: 'Laboratorio', //TODO: aggiungere localizzazione
+    subtitle: 'Testing per nuove funzioni.', //TODO: aggiungere localizzazione
+    url: '/lab',
+    icon: flask,
+    component: LabPage,
   },
 ]
 

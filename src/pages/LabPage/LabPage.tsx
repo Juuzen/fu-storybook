@@ -1,7 +1,7 @@
 import { IonBreadcrumb, IonBreadcrumbs, IonCol, IonContent, IonGrid, IonRow } from '@ionic/react'
 import Clock from './Clock/Clock'
 
-const TestPage = () => {
+const LabPage = () => {
   return (
     <IonContent>
       <IonBreadcrumbs>
@@ -15,7 +15,7 @@ const TestPage = () => {
       <IonGrid>
         <IonRow>
           <IonCol size='6'>
-            <Clock />
+            <Clock size={200} offset={0} stroke={70} />
           </IonCol>
         </IonRow>
       </IonGrid>
@@ -23,4 +23,4 @@ const TestPage = () => {
   )
 }
 
-export default TestPage
+export default LabPage

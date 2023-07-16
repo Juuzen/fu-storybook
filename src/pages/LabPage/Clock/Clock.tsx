@@ -3,7 +3,13 @@ import { useState } from 'react'
 import { IClockSectionData } from '../../../models/IClock.model'
 import ClockSection from './ClockSection/ClockSection'
 
-const Clock = () => {
+interface IProps {
+  size: number
+  offset: number
+  stroke: number
+}
+
+const Clock = ({ size, offset, stroke }: IProps) => {
   const [maxSections, setMaxSections] = useState<number>(7)
   const [filledSections, setFilledSections] = useState<number>(4)
 
@@ -24,7 +30,7 @@ const Clock = () => {
 
       const section: IClockSectionData = {
         isFilled: i <= filledSections,
-        pathDescriptor: describeArc(100, 100, 70, prevStartAngle, prevEndAngle),
+        pathDescriptor: describeArc(size / 2, size / 2, stroke, prevStartAngle, prevEndAngle),
       }
 
       sections.push(section)
@@ -77,7 +83,7 @@ const Clock = () => {
 
       <IonCardContent>
         <div className='clock-container'>
-          <svg viewBox='0 0 200 200'>
+          <svg viewBox={`0 0 ${size} ${size}`}>
             {clockSections.map((section, index) => (
               <ClockSection key={'clock-section-' + index} section={section} />
             ))}
