@@ -2,9 +2,9 @@
 
 .clockSection {
   fill: none;
-  stroke-width: 12;
+  stroke-width: 20;
   stroke: $color-medium;
-  stroke-linecap: round;
+  // stroke-linecap: round;
 
   &.filled {
     stroke: $color-success;

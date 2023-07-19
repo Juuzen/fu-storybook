@@ -1,6 +1,5 @@
-import { ERitualArea } from '../enums/ERitualArea.enum'
-import { ERitualPotency } from '../enums/ERitualPotency.enum'
-import { IRitualArea, IRitualPotency } from '../models/IRituals.model'
+import { ERitualArea, ERitualPotency } from '../enums/rituals.enum'
+import { IRitualArea, IRitualPotency } from '../models/rituals.model'
 
 export const CRitualPotencyOptions: IRitualPotency[] = [
   { id: 1, label: ERitualPotency.MINOR, mpCost: 20, difficultyLevel: 7, clockSections: 4 },

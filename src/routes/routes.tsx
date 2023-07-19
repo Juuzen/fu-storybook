@@ -1,4 +1,4 @@
-import IRoute from '../models/IRoute.model'
+import IRoute from '../models/IRoute'
 import {
   construct,
   diamond,

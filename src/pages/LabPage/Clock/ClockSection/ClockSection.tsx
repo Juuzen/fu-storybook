@@ -1,4 +1,4 @@
-import { IClockSectionData } from '../../../../models/IClock.model'
+import { IClockSectionData } from '../../../../models/clock.model'
 import scss from './ClockSection.module.scss'
 
 interface IProps {

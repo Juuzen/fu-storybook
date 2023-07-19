@@ -12,9 +12,9 @@ import {
   IonRow,
   IonTitle,
 } from '@ionic/react'
-import { CRitualAreaOptions, CRitualPotencyOptions } from '../../../consts/CRituals.const'
+import { CRitualAreaOptions, CRitualPotencyOptions } from '../../../consts/rituals.const'
 import { useState } from 'react'
-import { IRitualArea, IRitualPotency } from '../../../models/IRituals.model'
+import { IRitualArea, IRitualPotency } from '../../../models/rituals.model'
 import HorizontalDivider from '../../../components/HorizontalDivider/HorizontalDivider'
 
 import scss from './RitualCalculator.module.scss'
@@ -23,9 +23,11 @@ const RitualCalculator = () => {
   const [ritualPotency, setRitualPotency] = useState<IRitualPotency>(CRitualPotencyOptions[0])
   const [ritualArea, setRitualArea] = useState<IRitualArea>(CRitualAreaOptions[0])
 
+  const totalMPCost = ritualPotency.mpCost * ritualArea.mpMultiplier
+
   return (
     <IonCard>
-      <IonCardHeader className={`ion-no-padding ${scss.cardHeader}`}>
+      <IonCardHeader className={`ion-no-padding ion-padding-top`}>
         <IonTitle>Rituali</IonTitle>
       </IonCardHeader>
 
@@ -98,7 +100,7 @@ const RitualCalculator = () => {
               <HorizontalDivider />
 
               <div className={scss.ritualResultContainer}>
-                <span>{`Costo totale: ${ritualPotency.mpCost * ritualArea.mpMultiplier} MP`}</span>
+                <span>{`Costo totale: ${totalMPCost} MP`}</span>
                 <span>{`Livello Difficoltà: ${ritualPotency.difficultyLevel}`}</span>
                 <span>{`Dimensione Orologio (durante i conflitti): ${ritualPotency.clockSections} sezioni`}</span>
               </div>

@@ -1,6 +1,6 @@
-import { IonCard, IonCardContent, IonCardHeader, IonTitle } from '@ionic/react'
+import { IonCard, IonCardContent, IonCardHeader, IonInput, IonTitle } from '@ionic/react'
 import { useState } from 'react'
-import { IClockSectionData } from '../../../models/IClock.model'
+import { IClockSectionData } from '../../../models/clock.model'
 import ClockSection from './ClockSection/ClockSection'
 
 interface IProps {
@@ -10,23 +10,22 @@ interface IProps {
 }
 
 const Clock = ({ size, offset, stroke }: IProps) => {
-  const [maxSections, setMaxSections] = useState<number>(7)
-  const [filledSections, setFilledSections] = useState<number>(4)
+  const [clockName, setClockName] = useState<string>('')
+  const [maxSections, setMaxSections] = useState<number>(6)
+  const [filledSections, setFilledSections] = useState<number>(2)
 
   const clockSections = getClockSectionData()
 
   function getClockSectionData(): IClockSectionData[] {
     let prevStartAngle = 0
     let prevEndAngle = 0
-    const offset = 24
     const sectionLength = (360 - offset * maxSections) / maxSections
 
     const sections: IClockSectionData[] = []
 
     for (let i = 1; i <= maxSections; i++) {
-      //FIXME: l'offset deve essere uguale per ogni sezione, e deve essere simmetrico tra prima e ultima sezione
-      prevStartAngle = prevEndAngle + offset - (i === 1 ? offset / 2 : 0)
-      prevEndAngle = sectionLength * i + offset * i - offset + (i === maxSections ? offset / 2 : 0)
+      prevStartAngle = prevEndAngle + (i === 1 ? offset / 2 : offset)
+      prevEndAngle = sectionLength * i + offset * i - offset / 2
 
       const section: IClockSectionData = {
         isFilled: i <= filledSections,
@@ -88,6 +87,13 @@ const Clock = ({ size, offset, stroke }: IProps) => {
               <ClockSection key={'clock-section-' + index} section={section} />
             ))}
           </svg>
+
+          <IonInput
+            color='success'
+            value={clockName}
+            onIonInput={(e) => setClockName(e.detail.value ?? '')}
+            placeholder='Nome Orologio'
+          />
         </div>
       </IonCardContent>
     </IonCard>
