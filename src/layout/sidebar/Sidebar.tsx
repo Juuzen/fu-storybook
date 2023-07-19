@@ -13,7 +13,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react'
-import { footerRoutes, sidebarRoutes } from '../../routes/routes'
+import { footerRoutes, homeRoute, sidebarRoutes } from '../../routes/routes'
 import { close } from 'ionicons/icons'
 
 const Sidebar = () => {
@@ -33,9 +33,9 @@ const Sidebar = () => {
 
       <IonContent>
         <IonList className='ion-no-padding' lines='none'>
-          {sidebarRoutes.map((route, index) => (
+          {[homeRoute, ...sidebarRoutes].map((route, index) => (
             <IonMenuToggle key={'route-' + index} autoHide={false}>
-              <IonItem button routerLink={route.url}>
+              <IonItem button routerLink={route.url} disabled={route.disabled}>
                 <IonIcon slot='start' icon={route.icon} />
                 <IonLabel>{route.title}</IonLabel>
               </IonItem>

@@ -1,0 +1,12 @@
+@import '../../../../theme/app-variables.scss';
+
+.clockSection {
+  fill: none;
+  stroke-width: 20;
+  stroke: $color-medium;
+  // stroke-linecap: round;
+
+  &.filled {
+    stroke: $color-success;
+  }
+}
